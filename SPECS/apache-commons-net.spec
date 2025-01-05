@@ -3,7 +3,7 @@
 
 Name:           apache-%{short_name}
 Version:        3.6
-Release:        14%{?dist}
+Release:        15%{?dist}
 Summary:        Internet protocol suite Java library
 License:        ASL 2.0
 URL:            http://commons.apache.org/%{base_name}/
@@ -56,6 +56,9 @@ rm src/test/java/org/apache/commons/net/tftp/TFTPServerPathTest.java
 %license LICENSE.txt NOTICE.txt
 
 %changelog
+* Tue Nov 19 2024 Marián Konček <mkoncek@redhat.com> - 3.6-15
+- Rebuild with regenerated Requires on Java
+
 * Mon Aug 09 2021 Mohan Boddu <mboddu@redhat.com> - 3.6-14
 - Rebuilt for IMA sigs, glibc 2.34, aarch64 flags
   Related: rhbz#1991688
