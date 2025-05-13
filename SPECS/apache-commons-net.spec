@@ -3,12 +3,13 @@
 
 Name:           apache-%{short_name}
 Version:        3.6
-Release:        15%{?dist}
+Release:        17%{?dist}
 Summary:        Internet protocol suite Java library
 License:        ASL 2.0
 URL:            http://commons.apache.org/%{base_name}/
 Source0:        http://archive.apache.org/dist/commons/%{base_name}/source/%{short_name}-%{version}-src.tar.gz
 BuildArch:      noarch
+ExclusiveArch:  aarch64 ppc64le s390x x86_64 noarch
 
 BuildRequires:  maven-local
 BuildRequires:  mvn(junit:junit)
@@ -56,6 +57,12 @@ rm src/test/java/org/apache/commons/net/tftp/TFTPServerPathTest.java
 %license LICENSE.txt NOTICE.txt
 
 %changelog
+* Sat Nov 23 2024 Marián Konček <mkoncek@redhat.com> - 3.6-17
+- Add noarch to ExclusiveArch
+
+* Fri Nov 22 2024 Marián Konček <mkoncek@redhat.com> - 3.6-16
+- Disable building on i686
+
 * Tue Nov 19 2024 Marián Konček <mkoncek@redhat.com> - 3.6-15
 - Rebuild with regenerated Requires on Java
 
